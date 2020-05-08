@@ -1,11 +1,19 @@
 const express = require("express");
 const path = require("path");
 
+// import hbs directly
+const hbs = require("hbs");
+
 const app = express();
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
+
+// register a helper
+hbs.registerHelper("increment", function (num, options) {
+    return num + 1;
+});
 
 // This is the optional logging middleware mentioned at the bottom of
 // the tutorial.
@@ -22,6 +30,7 @@ function homePage(request, response) {
     const pageData = {
         title: "Home Page",
         body: "content coming soon",
+        drinks: ["coffee", "tea", "water"],
     };
     response.render("page.hbs", pageData);
 }

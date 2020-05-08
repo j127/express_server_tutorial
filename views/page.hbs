@@ -11,6 +11,9 @@
         </nav>
         <h1>{{title}}</h1>
         <p>{{body}}</p>
+        {{#each drinks}}
+            {{increment @index}}. {{.}}
+        {{/each}}
         <script src="/main.js"></script>
     </body>
 </html>
