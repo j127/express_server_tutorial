@@ -1,19 +1,13 @@
 const express = require("express");
 const path = require("path");
-
-// import hbs directly
-const hbs = require("hbs");
+const initHandlebars = require("./handlebars");
 
 const app = express();
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
-
-// register a helper
-hbs.registerHelper("increment", function (num, options) {
-    return num + 1;
-});
+initHandlebars();
 
 // This is the optional logging middleware mentioned at the bottom of
 // the tutorial.
