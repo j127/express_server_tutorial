@@ -1,7 +1,6 @@
-function initHandlebars() {
-    // import hbs directly
-    const hbs = require("hbs");
+const hbs = require("hbs");
 
+function initHandlebars() {
     // register a helper
     hbs.registerHelper("increment", function (num, options) {
         return num + 1;
