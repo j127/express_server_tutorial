@@ -7,7 +7,7 @@
     "scripts": {
         "start": "npx nodemon server.js"
     },
-    "author": "J. Cohen <hostelmarketing@gmail.com> (https://github.com/j127)",
+    "author": "J. Cohen",
     "license": "BSD-3-Clause",
     "devDependencies": {
         "nodemon": "^2.0.3"
